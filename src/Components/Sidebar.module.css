@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: Figtree-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.Container{
+    width: 200px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.Main {
+    padding: 5px;
+    margin-left:10px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    
+    
+}
+
+.Icon {
+    font-size: xx-large;
+    padding-left:20px;
+
+}
+.MainContent {
+    font-size: larger;
+    margin-left: 7px;
+    font-weight: 500;
+
+}
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+.Main:hover {
+    background-color: #f0f0f0;
+    border-radius: 18px;
+}
+
+
+.Logout{
+    margin:10px 0px 0px 10px;
+}
+.btn{
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: flex-start; /* Top par rakhega */
+    padding-top: 20px
+}
+.active {
+  background-color: rgb(94, 94, 255);
+  color:whitesmoke;
+  padding: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 13px;
+}
+.menu {
+  background-color: white;
+  color: black;
+  padding:8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 13px;
+}

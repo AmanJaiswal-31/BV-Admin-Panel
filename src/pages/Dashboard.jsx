@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Dashborad() {
+
+function Dashboard() {
   const navigation = useNavigate()
 
   useEffect(() => {
-    const email = localStorage.getItem('Email')
+    const email = localStorage.getItem('email')
     if (email === "aman123@gmail.com") {
 
     } else {
@@ -16,17 +16,14 @@ function Dashborad() {
     }
   }, [navigation])
 
-  function handleClick() {
-    localStorage.clear()
-    navigation('/login')
-  }
+
   return (
     <div >
-      <h1>This is DashBoard page</h1>
-      <br />
-      <button type="button" className="btn btn-danger" onClick={handleClick}>LogOut</button>
+      <h1 >This is DashBoard page</h1>
+
     </div>
   )
 }
 
-export default Dashborad
+
+export default Dashboard;

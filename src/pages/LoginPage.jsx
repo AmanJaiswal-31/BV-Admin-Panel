@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
-import "./loginPage.css";
+import styles from "./LoginPage.module.css";
 import { useNavigate } from 'react-router'
 
 
@@ -19,13 +19,13 @@ function LoginPage() {
     )
 
     useEffect(() => {
-        const storedData = localStorage.getItem('Email')
+        const storedData = localStorage.getItem('email')
 
 
         if (storedData) {
             navigate('/dashboard')
         }
-    },[navigation])
+    },[navigate])
 
     function handleChange(e) {
         setData(
@@ -48,7 +48,7 @@ function LoginPage() {
             return
         }
 
-        localStorage.setItem("Email", adminEmail);
+        localStorage.setItem("email", adminEmail);
         navigate('/dashboard')
         toast.success('Login successfully!')
         console.log(data)
@@ -59,15 +59,15 @@ function LoginPage() {
     }
     return (
 
-        <div className='login'>
+        <div className={styles.login}>
 
-            <div className='container'>
+            <div className={styles.container}>
                 <h1>Login Page</h1>
 
                 <form onSubmit={handleClick}>
-                    <label className='email'>Email: </label>
+                    <label>Email: </label>
                     <input type='email' value={data.email} name="email" placeholder='Enter Your Email' onChange={handleChange} /><br /> <br />
-                    <label className='password'>Password: </label>
+                    <label>Password: </label>
                     <input type='password' value={data.password} name="password" placeholder='Enter Password' onChange={handleChange} /> <br /> <br />
                     <button type='submit'>Submit</button>
                 </form>

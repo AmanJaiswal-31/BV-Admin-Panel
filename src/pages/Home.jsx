@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import style from "./LoginPage.module.css";
 
 function Home() {
-    navigation = useNavigate()
+    const navigation = useNavigate()
     useEffect(() => {
-        const email = localStorage.getItem("Email")
+        const email = localStorage.getItem("email")
         if (email) {
             navigation('/dashboard')
         }
@@ -13,8 +14,8 @@ function Home() {
 
     return (
         <div>
-            <h1 className='my-heading'>Home Page</h1>
-            <Link to="/login" className='Login'>Login</Link>
+            <h1 className={style.heading}>Home Page</h1>
+            <Link to="/login" className={style.loginLink}>Login</Link>
         </div>
     )
 }
