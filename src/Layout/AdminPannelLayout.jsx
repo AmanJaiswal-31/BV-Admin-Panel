@@ -13,17 +13,20 @@ function AdminPannelLayout() {
     const [showSidebar, setShowSidebar] = useState(true)
 
     return (
-        <div className={style.layout}>
-            {showSidebar && <Sidebar setActivePage={setActivePage} activePage={activePage}/>}
-            <div className={style.content}>
-                {activePage === "dashboard" && <Dashboard />}
-                {activePage === "user" && <User />}
-                {activePage === "material" && <Material />}
-                {activePage === "notice" && <Notice />}
-                {activePage === "college" && <College />}
-                {activePage === "syllabus" && <Syllabus />}
+        <>
+            <button onClick={() => setShowSidebar(!showSidebar)} className={style.btn}><span className="material-symbols-outlined ">menu</span></button>
+            <div className={style.layout}>
+                {showSidebar && <Sidebar setActivePage={setActivePage} activePage={activePage} />}
+                <div className={style.content}>
+                    {activePage === "dashboard" && <Dashboard />}
+                    {activePage === "user" && <User />}
+                    {activePage === "material" && <Material />}
+                    {activePage === "notice" && <Notice />}
+                    {activePage === "college" && <College />}
+                    {activePage === "syllabus" && <Syllabus />}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

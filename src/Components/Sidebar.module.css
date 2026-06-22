@@ -45,14 +45,15 @@ nav a {
 
 
 .Logout{
-    margin:10px 0px 0px 10px;
+   margin-right:45px;
+   margin-top:20px;
 }
-.btn{
+/* .btn{
     display: flex;
-    justify-content: center; /* Horizontal center */
-    align-items: flex-start; /* Top par rakhega */
+    justify-content: center; 
+    align-items: flex-start; 
     padding-top: 20px
-}
+} */
 .active {
   background-color: rgb(94, 94, 255);
   color:whitesmoke;

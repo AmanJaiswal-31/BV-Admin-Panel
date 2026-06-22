@@ -1,8 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
 .layout {
     display: flex;
+    /* justify-content: center; */
+    text-align: center;
 }
 
 .content {
     flex: 1;
     padding: 20px;
+}
+.btn {
+    width: 45px;
+    height: 45px;
+    margin: 15px 0 0 35px;
+    padding: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 800;
 }
