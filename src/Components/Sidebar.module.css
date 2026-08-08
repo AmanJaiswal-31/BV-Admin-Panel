@@ -1,72 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
-
-* {
-    margin: 0%;
-    padding: 0%;
-    font-family: Figtree-Regular, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+.Sider{
+    height:100vh;
+   padding:15px;
+   width:300px;
 }
-
-.Container{
-    width: 200px;
-    height: 100vh;
-    border-right: 1px solid #ddd;
-    padding-top: 20px;
+.Sider .ant-menu {
+    border-inline-end: none;
+     margin-top: 15px;
 }
-
-.Main {
-    padding: 5px;
-    margin-left:10px;
+.Sider :global(.ant-menu-item){
+     margin: 20px 0 !important;
+    border-radius: 8px;
+}
+:global(.ant-menu-title-content) {
+    margin-left: 8px;
+}
+.Logout {
+    width:50%;
+    margin-left:20px;
+}
+.LogoContainer{
     display: flex;
-    cursor: pointer;
     align-items: center;
+    gap: 18px;
+
+    padding: 25px 20px;
+}
+.logo{
+    width: 45px;
+    height: 45px;
     
-    
-}
+    border-radius: 12px;
 
-.Icon {
-    font-size: xx-large;
-    padding-left:20px;
+    background: #2563eb;
 
-}
-.MainContent {
-    font-size: larger;
-    margin-left: 7px;
-    font-weight: 500;
-
-}
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
-.Main:hover {
-    background-color: #f0f0f0;
-    border-radius: 18px;
-}
-
-
-.Logout{
-   margin-right:45px;
-   margin-top:20px;
-}
-/* .btn{
     display: flex;
-    justify-content: center; 
-    align-items: flex-start; 
-    padding-top: 20px
-} */
-.active {
-  background-color: rgb(94, 94, 255);
-  color:whitesmoke;
-  padding: 8px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  border-radius: 13px;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
-.menu {
-  background-color: white;
-  color: black;
-  padding:8px;
-  margin-bottom: 8px;
-  cursor: pointer;
-  border-radius: 13px;
+.text h3{
+    color: white;
+    margin: 0;
+    font-size: 22px;
+}
+
+.text p{
+    margin:0;
+    color: #9ca3af;
+    font-size: 14px;
 }

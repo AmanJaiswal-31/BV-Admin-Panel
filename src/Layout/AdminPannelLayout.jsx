@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import Sidebar from "../Components/Sidebar";
-import Dashboard from "../pages/Dashboard";
-import User from "../pages/User";
-import Material from "../pages/Material";
-import Notice from "../pages/Notice";
-import College from "../pages/College";
-import Syllabus from "../pages/Syllabus";
 import style from './AdminPannelLayout.module.css'
+
+const Dashboard = lazy(() => import("../pages/Dashboard"))
+const User = lazy(() => import("../pages/User"))
+const Material = lazy(() => import("../pages/Material"))
+const Notice = lazy(() => import("../pages/Notice"))
+const College = lazy(() => import("../pages/College"))
+const Syllabus = lazy(() => import("../pages/Syllabus"))
+
 
 function AdminPannelLayout() {
     const [activePage, setActivePage] = useState("dashboard");
@@ -14,17 +16,21 @@ function AdminPannelLayout() {
 
     return (
         <>
-            <button onClick={() => setShowSidebar(!showSidebar)} className={style.btn}><span className="material-symbols-outlined ">menu</span></button>
+
+
             <div className={style.layout}>
                 {showSidebar && <Sidebar setActivePage={setActivePage} activePage={activePage} />}
-                <div className={style.content}>
-                    {activePage === "dashboard" && <Dashboard />}
-                    {activePage === "user" && <User />}
-                    {activePage === "material" && <Material />}
-                    {activePage === "notice" && <Notice />}
-                    {activePage === "college" && <College />}
-                    {activePage === "syllabus" && <Syllabus />}
-                </div>
+                <button onClick={() => setShowSidebar(!showSidebar)} className={style.ToggleButton}><span className="material-symbols-outlined">menu</span></button>
+                <Suspense fallback={<h2>Loading...</h2>}>
+                    <div className={style.content}>
+                        {activePage === "dashboard" && <Dashboard />}
+                        {activePage === "user" && <User />}
+                        {activePage === "material" && <Material />}
+                        {activePage === "notice" && <Notice />}
+                        {activePage === "college" && <College />}
+                        {activePage === "syllabus" && <Syllabus />}
+                    </div>
+                </Suspense>
             </div>
         </>
     );

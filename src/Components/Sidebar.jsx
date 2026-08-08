@@ -1,10 +1,58 @@
 import React from "react";
-import style from "./Sidebar.module.css";
+import { Layout, Menu, theme } from 'antd';
+import style from './Sidebar.module.css'
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  DashboardOutlined,
+  UserOutlined,
+  FileTextOutlined,
+  NotificationOutlined,
+  BankOutlined,
+  BookOutlined,
+} from "@ant-design/icons";
 
-function Sidebar({ setActivePage,activePage}) {
+
+const { Sider } = Layout
+const myItems = [
+  {
+    key: "dashboard",
+    icon: (
+      <span className="material-symbols-outlined">
+        dashboard
+      </span>
+    ),
+    label: "Dashboard"
+  },
+  {
+    key: "user",
+    icon: <UserOutlined />,
+    label: "User"
+  },
+  {
+    key: "material",
+    icon: <FileTextOutlined />,
+    label: "Material"
+  },
+  {
+    key: "notice",
+    icon: <NotificationOutlined />,
+    label: "Notice"
+  },
+  {
+    key: "college",
+    icon: <BankOutlined />,
+    label: "College"
+  },
+  {
+    key: "syllabus",
+    icon: <BookOutlined />,
+    label: "Syllabus"
+  }
+
+]
+function Sidebar({ setActivePage, activePage }) {
   const navigation = useNavigate();
 
   function handleClick() {
@@ -15,52 +63,35 @@ function Sidebar({ setActivePage,activePage}) {
 
 
   return (
-    <nav className={style.Container}>
-      <div className={style.Main} onClick={() => setActivePage("dashboard")} >
-        <span className="material-symbols-outlined Icon">dashboard</span>
-        <div className={`${style.MainContent} ${activePage=='dashboard'?style.active:style.menu}`}>Dashboard</div>
+    <Sider className={style.Sider} width={255}>
+
+      <div className={style.LogoContainer}>
+        <div className={style.logo}>
+          B
+        </div>
+
+        <div className={style.text}>
+          <h3>BEUVERSE</h3>
+          <p>Admin Panel</p>
+        </div>
       </div>
 
-      <div className={style.Main} onClick={() => setActivePage("user")}>
-        <span className="material-symbols-outlined Icon">
-          user_attributes
-        </span>
-        <div className={`${style.MainContent} ${activePage=='user'?style.active:style.menu}`}>User</div>
-      </div>
-
-      <div className={style.Main} onClick={() => setActivePage("material")}>
-        <span className="material-symbols-outlined Icon">description</span>
-        <div className={`${style.MainContent} ${activePage=='material'?style.active:style.menu}`}>Material</div>
-      </div>
-
-      <div className={style.Main} onClick={() => setActivePage("notice")}>
-        <span className="material-symbols-outlined Icon">
-          notifications_active
-        </span>
-        <div className={`${style.MainContent} ${activePage=='notice'?style.active:style.menu}`}>Notice</div>
-      </div>
-
-      <div className={style.Main} onClick={() => setActivePage("college")}>
-        <span className="material-symbols-outlined Icon">
-          account_balance
-        </span>
-        <div className={`${style.MainContent} ${activePage=='college'?style.active:style.menu}`}>Colleges</div>
-      </div>
-
-      <div className={style.Main} onClick={() => setActivePage("syllabus")}>
-        <span className="material-symbols-outlined Icon">
-          library_books
-        </span>
-        <div className={`${style.MainContent} ${activePage=='syllabus'?style.active:style.menu}`}>Syllabus</div>
-      </div>
-
+      <Menu
+        theme="dark"
+        items={myItems}
+        selectedKeys={[activePage]}
+        onClick={({ key }) => {
+          setActivePage(key)
+        }}
+      />
       <button
         className={`btn btn-danger ${style.Logout}`}
         onClick={handleClick}
       >
         Logout
       </button>
-    </nav>
+
+    </Sider>
   );
 }
 
